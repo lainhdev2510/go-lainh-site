@@ -1,0 +1,45 @@
+package home
+
+import (
+	"go-lainh-site/components"
+	"go-lainh-site/routes/blogs"
+	"go-lainh-site/routes/projects"
+	"go-lainh-site/types"
+)
+
+templ HomePage(blogItems []types.BlogItem, projectItems []types.ProjectItem) {
+	@components.Base() {
+		@HomeHero()
+		<div class="w-max mx-auto">
+			<p class="mt-20 section-title">Leetcode profile</p>
+		</div>
+		<div class="max-w-xl mx-auto mt-3">
+			<iframe class="w-full" src="https://leetcard.jacoblin.cool/lainhdev?theme=unicorn&font=Noto%20Sans%20Pau%20Cin%20Hau" title="Leetcode profile"></iframe>
+		</div>
+		<a href="/leetcode" class="block w-max mx-auto underline mt-3 !text-sm">leetcode journey</a>
+		<div class="w-max mx-auto">
+			<p class="mt-20 section-title">Featured Project</p>
+		</div>
+		<div class="max-w-xl mx-auto mt-3">
+			<div class="mx-5 border-t">
+				for _, item := range projectItems {
+					@projects.ProjectItem(item)
+				}
+			</div>
+		</div>
+		<div class="w-max mx-auto">
+			<p class="mt-20 section-title">Blog</p>
+		</div>
+		<div class="max-w-xl mx-auto mt-3">
+			<div class="mx-5 border-t">
+				for _, item := range blogItems {
+					@blogs.BlogItem(item)
+				}
+			</div>
+		</div>
+		<div class="w-max mx-auto">
+			<p class="mt-20 section-title">Contact</p>
+		</div>
+		@components.ContactForm()
+	}
+}

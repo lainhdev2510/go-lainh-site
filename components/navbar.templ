@@ -1,0 +1,25 @@
+package components
+
+templ Navbar() {
+	<nav class="z-10 fixed top-0 w-full bg-opacity-75 pt-10 pb-5 bg-white">
+		<div class="mx-auto w-max rounded-full bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 shadow-md py-3 px-1">
+			<ul class="flex flex-row justify-between gap-x-2 md:gap-x-3 items-center text-xs md:text-lg">
+				<li>
+					<a href="/" class="px-2 py-1 md:px-3 md:py-2 rounded-full bg-transparent text-white font-semibold shadow-md">Home</a>
+				</li>
+				<li>
+					<a href="/projects" class="px-2 py-1 md:px-3 md:py-2 rounded-full bg-transparent text-white font-semibold shadow-md">Project</a>
+				</li>
+				<li>
+					<a href="/leetcode" class="px-2 py-1 md:px-3 md:py-2 rounded-full bg-transparent text-white font-semibold shadow-md">Leetcode</a>
+				</li>
+				<li>
+					<a href="/blogs" class="px-2 py-1 md:px-3 md:py-2 rounded-full bg-transparent text-white font-semibold shadow-md">Blog</a>
+				</li>
+				<li>
+					<a href="/contact" class="px-2 py-1 md:px-3 md:py-2 rounded-full bg-transparent text-white font-semibold shadow-md">Contact</a>
+				</li>
+			</ul>
+		</div>
+	</nav>
+}

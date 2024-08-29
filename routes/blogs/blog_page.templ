@@ -1,0 +1,26 @@
+package blogs
+
+import (
+	"go-lainh-site/components"
+	"go-lainh-site/types"
+	"strings"
+)
+
+templ BlogPage(blog types.BlogItem) {
+	@components.Base() {
+		<div class="mt-32 max-w-xl px-5 mx-auto">
+			<a href="javascript:history.go(-1)"><img alt="arrow back" src="/public/icons/arrow-back.svg" class="w-12 border rounded-full p-2"/></a>
+			<h1 class="!text-4xl font-bold section-title mb-5">{ blog.Title }</h1>
+			<div class="flex flex-row items-center border-b pb-5">
+				<img alt="author" src="/public/icons/favicon.svg" class="border rounded-lg p-1 mr-3 w-12"/>
+				<div class="flex flex-col justify-around">
+					<p class="font-semibold text-lg">Lainh</p>
+					<p class="text-xs text-gray-500">{ strings.Split(blog.Created_time, " ")[0] } </p>
+				</div>
+			</div>
+			<div class="mt-10">
+				{ blog.Content }
+			</div>
+		</div>
+	}
+}

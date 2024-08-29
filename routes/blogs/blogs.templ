@@ -1,0 +1,19 @@
+package blogs
+
+import (
+	"go-lainh-site/components"
+	"go-lainh-site/types"
+)
+
+templ BlogsPage(blogs []types.BlogItem) {
+	@components.Base() {
+		<div class="mt-40 max-w-xl px-5 mx-auto">
+			<div class="w-max mx-auto py-3">
+				<h1 class="!leading-12 !text-4xl section-title">Blogs</h1>
+			</div>
+			for _, item := range blogs {
+				@BlogItem(item)
+			}
+		</div>
+	}
+}

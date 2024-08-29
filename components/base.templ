@@ -1,0 +1,22 @@
+package components
+
+templ Base() {
+	<!DOCTYPE html>
+	<html lang="en">
+		<head>
+			<meta charset="utf-8"/>
+			<title>Lainh site</title>
+			<meta name="viewport" content="width=device-width, initial-scale=1">
+			<link rel="icon" href="/public/icons/favicon.svg" type="image/svg+xml">
+			<meta content="I'm a fullstack engineer. I love to build things for the web and mobile devices. I love to learn new things and I'm always looking for new challenges." name="description">
+			<link href="/public/css/output.css" rel="stylesheet"/>
+			<script src="/public/js/htmx.min.js"></script>
+		</head>
+		<body class="relative">
+			@Navbar()
+			<main>
+				{ children... }
+			</main>
+		</body>
+	</html>
+}
