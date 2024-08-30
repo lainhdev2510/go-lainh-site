@@ -19,7 +19,7 @@ templ LeetcodePage(problems []types.ProblemItem) {
 				<p class="section-title">Problems</p>
 			</div>
 			for _, problem := range problems {
-				<a class="underline font-semibold block" href={ templ.URL("/leetcode/" + strconv.Itoa(problem.Id)) }>{ problem.Title }</a>
+				<a class="underline font-semibold block animate__animated animate__fadeInDown" href={ templ.URL("/leetcode/" + strconv.Itoa(problem.Id)) }>{ problem.Title }</a>
 			}
 		</div>
 	}
