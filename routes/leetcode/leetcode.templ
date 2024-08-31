@@ -20,6 +20,11 @@ templ LeetcodePage(problems []types.ProblemItem) {
 			</div>
 			for _, problem := range problems {
 				<a class="underline font-semibold block animate__animated animate__fadeInDown" href={ templ.URL("/leetcode/" + strconv.Itoa(problem.Id)) }>{ problem.Title }</a>
+				// <div class="border-b my-1 pb-1 flex flex-row items-center gap-x-2">
+				// 	for _, tag := range problem.Tags {
+				// 		<p class="px-2 py-1 rounded-full bg-gradient-primary text-xs text-white">{ tag }</p>
+				// 	}
+				// </div>
 			}
 		</div>
 	}

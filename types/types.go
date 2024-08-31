@@ -28,7 +28,7 @@ type ProblemItem struct {
 	Id           int
 	Title        string
 	Content      string
-	Tag          string
+	Tags         []string `json:"tags"`
 	Date_created string
 }
 
