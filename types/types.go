@@ -5,11 +5,11 @@ type BlogItem struct {
 	Title        string
 	Content      string
 	Description  string
-	Created_time string
+	Date_created string
 }
 
 type BlogsResult struct {
-	List []BlogItem
+	Data []BlogItem
 }
 
 type ProjectItem struct {
@@ -17,11 +17,11 @@ type ProjectItem struct {
 	Title        string
 	Content      string
 	Description  string
-	Created_time string
+	Date_created string
 }
 
 type ProjectsResult struct {
-	List []ProjectItem
+	Data []ProjectItem
 }
 
 type ProblemItem struct {
@@ -29,9 +29,9 @@ type ProblemItem struct {
 	Title        string
 	Content      string
 	Tag          string
-	Created_time string
+	Date_created string
 }
 
 type ProblemsResult struct {
-	List []ProblemItem
+	Data []ProblemItem
 }
