@@ -3,13 +3,14 @@ package utils
 import (
 	"go-lainh-site/types"
 	"log"
+	"os"
 
 	"github.com/go-resty/resty/v2"
 )
 
 func FetchBlogs() []types.BlogItem {
 	var result types.BlogsResult
-	cmsUrl := "https://directus.lainh.site/items/blogs"
+	cmsUrl := os.Getenv("CMS_URL") + "items/blogs"
 
 	client := resty.New()
 	client.SetHeader("accept", "application/json")
@@ -25,7 +26,7 @@ func FetchBlogs() []types.BlogItem {
 
 func FetchFeaturedBlogs() []types.BlogItem {
 	var result types.BlogsResult
-	cmsUrl := "https://directus.lainh.site/items/blogs?limit=4&sort[]=-date_created"
+	cmsUrl := os.Getenv("CMS_URL") + "items/blogs?limit=4&sort[]=-date_created"
 
 	client := resty.New()
 	client.SetHeader("accept", "application/json")
@@ -46,7 +47,7 @@ func FetchBlog(blogId string) types.BlogItem {
 		Data types.BlogItem
 	}
 
-	cmsUrl := "https://directus.lainh.site/items/blogs/" + blogId
+	cmsUrl := os.Getenv("CMS_URL") + "items/blogs/" + blogId
 
 	client := resty.New()
 	client.SetHeader("accept", "application/json")
@@ -62,7 +63,7 @@ func FetchBlog(blogId string) types.BlogItem {
 
 func FetchProjects() []types.ProjectItem {
 	var result types.ProjectsResult
-	cmsUrl := "https://directus.lainh.site/items/projects"
+	cmsUrl := os.Getenv("CMS_URL") + "items/projects"
 
 	client := resty.New()
 	client.SetHeader("accept", "application/json")
@@ -78,7 +79,7 @@ func FetchProjects() []types.ProjectItem {
 
 func FetchFeaturedProject() []types.ProjectItem {
 	var result types.ProjectsResult
-	cmsUrl := "https://directus.lainh.site/items/projects?limit=4&sort[]=-date_created"
+	cmsUrl := os.Getenv("CMS_URL") + "items/projects?limit=4&sort[]=-date_created"
 
 	client := resty.New()
 	client.SetHeader("accept", "application/json")
@@ -97,7 +98,7 @@ func FetchProject(projectId string) types.ProjectItem {
 		Data types.ProjectItem
 	}
 
-	cmsUrl := "https://directus.lainh.site/items/projects/" + projectId
+	cmsUrl := os.Getenv("CMS_URL") + "items/projects/" + projectId
 
 	client := resty.New()
 	client.SetHeader("accept", "application/json")
@@ -113,7 +114,7 @@ func FetchProject(projectId string) types.ProjectItem {
 
 func FetchAllProblem() []types.ProblemItem {
 	var result types.ProblemsResult
-	cmsUrl := "https://directus.lainh.site/items/problems"
+	cmsUrl := os.Getenv("CMS_URL") + "items/problems"
 
 	client := resty.New()
 	client.SetHeader("accept", "application/json")
@@ -132,7 +133,7 @@ func FetchProblem(problemId string) types.ProblemItem {
 		Data types.ProblemItem
 	}
 
-	cmsUrl := "https://directus.lainh.site/items/problems/" + problemId
+	cmsUrl := os.Getenv("CMS_URL") + "items/problems/" + problemId
 
 	client := resty.New()
 	client.SetHeader("accept", "application/json")

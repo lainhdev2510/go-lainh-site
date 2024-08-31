@@ -8,7 +8,7 @@ import (
 
 templ ProjectPage(project types.ProjectItem) {
 	@components.Base() {
-		<div class="mt-32 max-w-2xl px-5 mx-auto">
+		<div class="mt-32 max-w-2xl px-5 mx-auto pb-10">
 			<a href="javascript:history.go(-1)"><img alt="arrow back" src="/public/icons/arrow-back.svg" class="w-12 border rounded-full p-2"/></a>
 			<h1 class="!text-4xl font-bold section-title mb-5">{ project.Title }</h1>
 			<div class="flex flex-row items-center border-b pb-5">
