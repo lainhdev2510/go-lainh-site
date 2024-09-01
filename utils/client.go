@@ -10,7 +10,7 @@ import (
 
 func FetchBlogs() []types.BlogItem {
 	var result types.BlogsResult
-	cmsUrl := os.Getenv("CMS_URL") + "items/blogs"
+	cmsUrl := os.Getenv("CMS_URL") + "items/blogs?sort[]=-date_created"
 
 	client := resty.New()
 	client.SetHeader("accept", "application/json")
@@ -63,7 +63,7 @@ func FetchBlog(blogId string) types.BlogItem {
 
 func FetchProjects() []types.ProjectItem {
 	var result types.ProjectsResult
-	cmsUrl := os.Getenv("CMS_URL") + "items/projects"
+	cmsUrl := os.Getenv("CMS_URL") + "items/projects?sort[]=-date_created"
 
 	client := resty.New()
 	client.SetHeader("accept", "application/json")
