@@ -31,13 +31,11 @@ func FetchFeaturedBlogs() []types.BlogItem {
 	client := resty.New()
 	client.SetHeader("accept", "application/json")
 
-	res, err := client.R().SetResult(&result).Get(cmsUrl)
+	_, err := client.R().SetResult(&result).Get(cmsUrl)
 
 	if err != nil {
 		log.Println(err)
 	}
-
-	log.Println(res.String())
 
 	return result.Data
 }

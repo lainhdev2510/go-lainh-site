@@ -10,13 +10,13 @@ templ BlogItem(blog types.BlogItem) {
 	<a href={ templ.URL("/blogs/" + strconv.Itoa(blog.Id)) } class="flex flex-row py-5 border-b w-full justify-between animate__animated animate__fadeInDown">
 		<div class="flex flex-col justify-between">
 			<div>
-				<p class="text-2xl font-bold">{ blog.Title }</p>
-				<p class="text-gray-700 text-sm">{ blog.Description }</p>
+				<p class="text-lg md:text-2xl font-bold">{ blog.Title }</p>
+				<p class="text-gray-700 text-xs md:text-sm">{ blog.Description }</p>
 			</div>
 			<p class="text-gray-500 text-xs">{ strings.Split(blog.Date_created, "T")[0] } • Lainh</p>
 		</div>
-		<div class="border rounded-lg p-2">
-			<image src="/public/icons/lainh-logo.png" alt="logo"></image>
+		<div class="border rounded-lg p-2 w-[100px] h-[100px]">
+			<image src="/public/icons/lainh-logo.png" alt="logo" class=""></image>
 		</div>
 	</a>
 }
