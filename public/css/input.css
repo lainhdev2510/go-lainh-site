@@ -75,3 +75,27 @@
 .border-gradient-child {
   @apply bg-white w-full p-2 rounded-xl;
 }
+
+h1 {
+  @apply text-3xl;
+}
+
+h2 {
+  @apply text-2xl;
+}
+
+h3 {
+  @apply text-xl;
+}
+
+ol {
+  @apply list-decimal ml-5;
+}
+
+ol > li::marker {
+  font-weight: bold;
+}
+
+a {
+  @apply underline gradient-text;
+}
